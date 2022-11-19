@@ -7,3 +7,5 @@ from .models import Sneaker
 def index(request):
     return render(request, 'PaginaPrincipal.html')
 
+def home(request):
+    return render(request, 'index.html')
