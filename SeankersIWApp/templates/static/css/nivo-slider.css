@@ -1,18 +1,5 @@
-/*
- * jQuery Nivo Slider v2.4
- * http://nivo.dev7studios.com
- *
- * Copyright 2011, Gilbert Pellegrom
- * Free to use and abuse under the MIT license.
- * http://www.opensource.org/licenses/mit-license.php
- * 
- * March 2010
- */
- 
- 
-/* The Nivo Slider styles */
 .nivoSlider {
-	position:relative;
+	position:center;
 }
 .nivoSlider img {
 	position:absolute;
@@ -60,7 +47,7 @@
 .nivo-html-caption {
     display:none;
 }
-/* Direction nav styles (e.g. Next & Prev) */
+
 .nivo-directionNav a {
 	position:absolute;
 	top:45%;
@@ -73,7 +60,7 @@
 .nivo-nextNav {
 	right:0px;
 }
-/* Control nav styles (e.g. 1,2,3...) */
+
 .nivo-controlNav a {
 	position:relative;
 	z-index:99;

@@ -1,10 +1,3 @@
-/* Credit: http://www.templatemo.com */
-
-/* 
-Shoes Template 
-http://www.templatemo.com/preview/templatemo_367_shoes 
-*/
-
 body {
 	margin: 0;
 	padding: 0;
@@ -12,7 +5,7 @@ body {
 	font-family: Tahoma, Geneva, sans-serif;
 	font-size: 12px;
 	line-height: 1.4em; 
-	background-color: #665f5f;
+	background-color: white;
 	background-repeat: repeat;
 	background-image: url(images/templatemo_body.jpg)
 }
@@ -241,7 +234,7 @@ h6 { font-size: 12px; margin: 0 0 5px; padding: 0; }
 	color: #999
 }
 #templatemo_footer a {
-	color: #fff;
+	color: #999;
 }
 
 /*============================*/

@@ -5,7 +5,7 @@ urlpatterns = [
 
    # path('', views.index, name='index'),
     path('', views.index, name='prueba'),
-    path('Home', views.home, name='home')
+    path('Home', views.home, name='home'),
     
 
 ]
