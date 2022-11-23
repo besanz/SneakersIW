@@ -1,22 +1,24 @@
+{% load static %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Seankers Deusto - FAQs</title>
+<title>FAQs</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
-<link href="templatemo_style.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css" />
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/ddsmoothmenu.js">
+<link href="{% static '/css/templatemo_style.css' %}" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="{% static '/css/nivo-slider.css' %}" type="text/css" media="screen" />
+<link rel="stylesheet" type="text/css" href="{% static '/css/ddsmoothmenu.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static '/css/slimbox2.css' %}" />
+<script type="text/javascript" src="{% static '/js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static '/js/ddsmoothmenu.js' %}">
 </script>
 <script type="text/javascript">
 ddsmoothmenu.init({
-	mainmenuid: "top_nav", //menu DIV id
-	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
-	classname: 'ddsmoothmenu', //class added to menu's outer DIV
-	//customtheme: ["#1c5a80", "#18374a"],
-	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+	mainmenuid: "top_nav", 
+	orientation: 'h', 
+	classname: 'ddsmoothmenu', 
+	contentsource: "markup" 
 })
 </script>
 </head>
@@ -63,19 +65,19 @@ ddsmoothmenu.init({
                 <div class="content"> 
                 	<ul class="sidebar_list">
                     	<li class="first"><a href="#">NIKE AIR JORDAN</a></li>
-                        <li><a href="#">CONVERSE ALL STARS</a></li>
-                        <li><a href="#">NIKE AIR FORCE 1</a></li>
-                        <li><a href="#">AIR JORDAN XI</a></li>
-                        <li><a href="#">REEBOK PUMP</a></li>
-                        <li><a href="#">AIR JORDAN XII</a></li>
-                        <li><a href="#">REEBOK QUESTION</a></li>
-                        <li><a href="#">AIR PENNY 2.20</a></li>
-                        <li><a href="#">NIKE AIR FORCE 2</a></li>
-                        <li><a href="#">AIR JORDAN XIV</a></li>
-                        <li><a href="#">REEBOK PUMP II</a></li>
-                        <li><a href="#">AIR JORDAN XV</a></li>
-                        <li><a href="#">REEBOK QUESTION TWO</a></li>
-                        <li><a href="#">AIR PENNY 4.20</a></li>
+                        <li><a href="{% url 'productDetail' %}">CONVERSE ALL STARS</a></li>
+                        <li><a href="{% url 'productDetail' %}">NIKE AIR FORCE 1</a></li>
+                        <li><a href="{% url 'productDetail' %}">AIR JORDAN XI</a></li>
+                        <li><a href="{% url 'productDetail' %}">REEBOK PUMP</a></li>
+                        <li><a href="{% url 'productDetail' %}">AIR JORDAN XII</a></li>
+                        <li><a href="{% url 'productDetail' %}">REEBOK QUESTION</a></li>
+                        <li><a href="{% url 'productDetail' %}">AIR PENNY 2.20</a></li>
+                        <li><a href="{% url 'productDetail' %}">NIKE AIR FORCE 2</a></li>
+                        <li><a href="{% url 'productDetail' %}">AIR JORDAN XIV</a></li>
+                        <li><a href="{% url 'productDetail' %}">REEBOK PUMP II</a></li>
+                        <li><a href="{% url 'productDetail' %}">AIR JORDAN XV</a></li>
+                        <li><a href="{% url 'productDetail' %}">REEBOK QUESTION TWO</a></li>
+                        <li class="last"><a href="{% url 'productDetail' %}">AIR PENNY 4.20</a></li>
                     </ul>
                 </div>
             </div>
