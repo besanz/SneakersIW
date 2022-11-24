@@ -26,31 +26,31 @@ ddsmoothmenu.init({
 <div id="templatemo_body_wrapper">
 <div id="templatemo_wrapper">
     <div id="templatemo_menubar">
-    	<div id="top_nav" class="ddsmoothmenu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="products.html">Products</a>
-                    <ul>
-                        <li><a href="#submenu1">Sub menu 1</a></li>
-                        <li><a href="#submenu2">Sub menu 2</a></li>
-                        <li><a href="#submenu3">Sub menu 3</a></li>
-                        <li><a href="#submenu4">Sub menu 4</a></li>
-                        <li><a href="#submenu5">Sub menu 5</a></li>
-                  </ul>
-                </li>
-                <li><a href="about.html">About</a>
-                    <ul>
-                        <li><a href="#submenu1">Sub menu 1</a></li>
-                        <li><a href="#submenu2">Sub menu 2</a></li>
-                        <li><a href="#submenu3">Sub menu 3</a></li>
-                  </ul>
-                </li>
-                <li><a href="faqs.html" class="selected">FAQs</a></li>
-                <li><a href="{% url 'checkout' %}">Checkout</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-            <br style="clear: left" />
-        </div> 
+        <div id="templatemo_menubar">
+            <div id="top_nav" class="ddsmoothmenu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html" class="selected">Sneakers</a>
+                        <ul>
+                            <li><a href="#submenu1">Nike</a></li>
+                            <li><a href="#submenu2">Adidas</a></li>
+                            <li><a href="#submenu3">Off-White</a></li>
+                            <li><a href="#submenu4">New Balance 4</a></li>
+                            <li><a href="#submenu5">Reebok</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="about.html">Acerca de</a>
+                        <ul>
+                            <li><a href="#submenu1"></a>Quienes somos</li>
+                            <li><a href="#submenu2">Vision</a></li>
+                            <li><a href="#submenu3">Mision</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="faqs.html">FAQs</a></li>
+                    <li><a href="checkout.html">Carrito</a></li>
+                </ul>
+                <br style="clear: left" />
+            </div> 
         <div id="templatemo_search">
             <form action="#" method="get">
               <input type="text" value=" " name="keyword" id="keyword" title="keyword" onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
@@ -130,9 +130,9 @@ ddsmoothmenu.init({
         <div class="cleaner"></div>
     </div> 
     <div id="templatemo_footer">
-    	<p><a href="#">Inicio</a> | <a href="#">Sneakers</a> | <a href="#">Acerca de</a> | <a href="#">FAQs</a> | <a href="#">Carrito</a> | <a href="#">Contact Us</a>
+    	<p><a href="{% url 'index' %}">Inicio</a> | <a href="{% url 'products' %}">Sneakers</a> | <a href="{% url 'about' %}">Acerca de</a> | <a href="{% url 'faqs' %}">FAQs</a> | <a href="{% url 'carrit' %}">Carrito</a>
 		</p>
-    	Copyright © 2022 <a href="#">Seankers Deusto</a></div> 
+    	Copyright © 2022 <a href="{% url 'index' %}">Seankers Deusto</a></div> 
 </div> 
 </div>
 </body>
