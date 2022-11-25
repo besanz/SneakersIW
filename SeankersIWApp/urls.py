@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from .views import VRegistro
 
 urlpatterns = [
     path('', views.index, name='index'),
@@ -8,7 +9,8 @@ urlpatterns = [
     path('Faqs', views.faqs, name='faqs'),
     path('Carrito', views.carrit, name='carrit'),
     path('Detalles_de_producto', views.pDetail, name='productDetail'),
-    path('Checkout', views.checkout, name='checkout')
+    path('Checkout', views.checkout, name='checkout'),
+    path('Registro', VRegistro.as_view(), name='Autenticacion')
     
 
 ]
