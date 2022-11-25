@@ -10,7 +10,9 @@ from django.views.generic import View
 
 @login_required
 def index(request):
-    return render(request, 'index.html')
+    sneakers = Sneaker.objects.all()
+    print(sneakers)
+    return render(request, 'index.html', {'products': sneakers})
 
 def products(request):
     return render(request, 'products.html')
@@ -39,12 +41,24 @@ class VRegistro(View):
 
     def post(self, request):
         form = UserCreationForm(request.POST)
+        usuario=form.save()
+        login(request, usuario)
+        return redirect('index')
+
+""" class VCompra(View):
+
+    def get(self,request):
+        form = UserCreationForm()
+        return render(request, 'registro_prueba.html', {"form":form})
+
+    def post(self, request):
+        form = UserCreationForm(request.POST)
 
         usuario=form.save()
 
         login(request, usuario)
 
-        return redirect('index')
+        return redirect('index') """
         
             
 

@@ -41,6 +41,20 @@
             </ul>
             <br style="clear: left" />
         </div> 
+        <div style="text-align: right;margin-right: 100px;color:white">
+
+            {% if user.is_authenticated %}
+
+            Autenticado. Hola {{user.username}}
+            
+
+            {% else %}
+
+            No autenticado. Por favor registrese.
+
+            {% endif %}
+
+        </div>
         <div id="templatemo_search">
             <form action="#" method="get">
               <input type="text" value=" " name="keyword" id="keyword" title="keyword" onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
@@ -75,25 +89,25 @@
             	<h3>Proximamente...</h3>   
                 <div class="content"> 
                 	<div class="bs_box">
-                    	<a href="#"><img src="{% static '/images/product/reebok.jpeg' %}" alt="image" /></a>
+                    	<a href="#"><img src="{% static '/images/product/08.jpg' %}" alt="image" /></a>
                         <h4><a href="#">REEBOK QUESTION</a></h4>
                         <p class="price">$120</p>
                         <div class="cleaner"></div>
                     </div>
                     <div class="bs_box">
-                    	<a href="#"><img src="{% static '/images/product/newbalance.jpeg' %}" alt="image" /></a>
+                    	<a href="#"><img src="{% static '/images/product/04.jpg' %}" alt="image" /></a>
                         <h4><a href="#">NEW BALANCE ONE</a></h4>
                         <p class="price">$130</p>
                         <div class="cleaner"></div>
                     </div>
                     <div class="bs_box">
-                    	<a href="#"><img src="{% static '/images/product/converse.jpeg' %}" alt="image" /></a>
+                    	<a href="#"><img src="{% static '/images/product/02.jpg' %}" alt="image" /></a>
                         <h4><a href="#">CONVERSE ALL STARS</a></h4>
                         <p class="price">$88</p>
                         <div class="cleaner"></div>
                     </div>
                     <div class="bs_box">
-                    	<a href="#"><img src="{% static '/images/product/offwhite.jpeg' %}" alt="image" /></a>
+                    	<a href="#"><img src="{% static '/images/product/01.jpg' %}" alt="image" /></a>
                         <h4><a href="#">OFF-WHITE VULCZ</a></h4>
                         <p class="price">$380</p>
                         <div class="cleaner"></div>
