@@ -62,22 +62,12 @@ ddsmoothmenu.init({
         	<div class="sidebar_box"><span class="bottom"></span>
             	<h3>Categories</h3>   
                 <div class="content"> 
+                	{% for sneaker in sneakers %}
                 	<ul class="sidebar_list">
-                    	<li class="first"><a href="#">NIKE AIR JORDAN</a></li>
-                        <li><a href="{% url 'productDetail' %}">CONVERSE ALL STARS</a></li>
-                        <li><a href="{% url 'productDetail' %}">NIKE AIR FORCE 1</a></li>
-                        <li><a href="{% url 'productDetail' %}">AIR JORDAN XI</a></li>
-                        <li><a href="{% url 'productDetail' %}">REEBOK PUMP</a></li>
-                        <li><a href="{% url 'productDetail' %}">AIR JORDAN XII</a></li>
-                        <li><a href="{% url 'productDetail' %}">REEBOK QUESTION</a></li>
-                        <li><a href="{% url 'productDetail' %}">AIR PENNY 2.20</a></li>
-                        <li><a href="{% url 'productDetail' %}">NIKE AIR FORCE 2</a></li>
-                        <li><a href="{% url 'productDetail' %}">AIR JORDAN XIV</a></li>
-                        <li><a href="{% url 'productDetail' %}">REEBOK PUMP II</a></li>
-                        <li><a href="{% url 'productDetail' %}">AIR JORDAN XV</a></li>
-                        <li><a href="{% url 'productDetail' %}">REEBOK QUESTION TWO</a></li>
-                        <li class="last"><a href="{% url 'productDetail' %}">AIR PENNY 4.20</a></li>
+                        
+                    	<li class="first"><a href="{{ sneaker.get_absolute_url }}">{{sneaker.nombre}}</a></li>
                     </ul>
+                    {% endfor %}
                 </div>
             </div>
             <div class="sidebar_box"><span class="bottom"></span>

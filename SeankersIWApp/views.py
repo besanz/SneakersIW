@@ -11,11 +11,11 @@ from django.views.generic import View
 @login_required
 def index(request):
     sneakers = Sneaker.objects.all()
-    print(sneakers)
-    return render(request, 'index.html', {'products': sneakers})
+    return render(request, 'index.html', {'sneakers': sneakers})
 
 def products(request):
-    return render(request, 'products.html')
+    sneakers = Sneaker.objects.all()
+    return render(request, 'products.html', {'sneakers': sneakers})
 
 def about(request):
     return render(request, 'about.html')
@@ -26,8 +26,11 @@ def faqs(request):
 def carrit(request):
     return render(request, 'shoppingcart.html')
 
-def pDetail(request):
-    return render(request, 'productdetail.html')
+def detalle(request, id):
+    sneakers = Sneaker.objects.all()
+    producto_selec = Sneaker.objects.get(id=id)
+    return render(request, 'productdetail.html', {'producto_selec': producto_selec})
+
 
 def checkout(request):
     return render(request, 'checkout.html')
@@ -45,20 +48,7 @@ class VRegistro(View):
         login(request, usuario)
         return redirect('index')
 
-""" class VCompra(View):
 
-    def get(self,request):
-        form = UserCreationForm()
-        return render(request, 'registro_prueba.html', {"form":form})
-
-    def post(self, request):
-        form = UserCreationForm(request.POST)
-
-        usuario=form.save()
-
-        login(request, usuario)
-
-        return redirect('index') """
         
             
 
