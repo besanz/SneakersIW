@@ -35,7 +35,7 @@ display: inline-block;
 
 .ddsmoothmenu ul li a.selected, .ddsmoothmenu ul li a:hover { /*CSS class that's dynamically added to the currently active menu items' LI A element*/
 	color: #fff;
-	background: #ffffff;
+	background: #2f2f2f;
 }
 
 /*1st sub level menu*/
@@ -45,7 +45,7 @@ display: inline-block;
 	padding: 10px 0 0;
 	display: none; /*collapse all sub menus to begin with*/
 	visibility: hidden;
-	background: #ffffff;
+	background: #313131;
 	border-bottom: 4px solid #000
 }
 
@@ -112,5 +112,3 @@ height: 0;
 .toplevelshadow{ /*shadow opacity. Doesn't work in IE*/
 opacity: 0.5;
 }
-
-/* menu */
