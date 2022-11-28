@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Seankers Shop</title>
     <meta name="keywords" content="" />
     <meta name="description" content="" />
@@ -122,52 +122,52 @@
                 <h1>New Seankers</h1>
                 <div class="product_box">
                     <h3>Air Force 1</h3>
-                    <a href="productdetail.html"><img src="{% static '/images/product/01.jpg' %}" alt="Shoes 1" /></a>
+                    <a href="{% url 'products' %}"><img src="{% static '/images/product/01.jpg' %}" alt="Shoes 1" /></a>
                     <p>Sneaker NIKE color Azul.</p>
                     <p class="product_price">$ 100</p>
-                    <a href="shoppingcart.html" class="addtocart"></a>
-                    <a href="productdetail.html" class="detail"></a>
+                    <a href="{% url 'carrit' %}" class="addtocart"></a>
+                    <a href="{% url 'products' %}" class="detail"></a>
                 </div>
                 <div class="product_box">
                     <h3>Dunk Low Panda</h3>
-                    <a href="productdetail.html"><img src="{% static '/images/product/02.jpg' %}" alt="Shoes 2" /></a>
+                    <a href="{% url 'products' %}"><img src="{% static '/images/product/02.jpg' %}" alt="Shoes 2" /></a>
                     <p>Sneaker NIKE color Negro y Blanco</p>
                     <p class="product_price">$ 80</p>
-                    <a href="shoppingcart.html" class="addtocart"></a>
-                    <a href="productdetail.html" class="detail"></a>
+                    <a href="{% url 'carrit' %}" class="addtocart"></a>
+                    <a href="{% url 'products' %}" class="detail"></a>
                 </div>
                 <div class="product_box no_margin_right">
                     <h3>Air Jordan 4</h3>
-                    <a href="productdetail.html"><img src="{% static '/images/product/03.jpg' %}" alt="Shoes 3" /></a>
+                    <a href="{% url 'products' %}"><img src="{% static '/images/product/03.jpg' %}" alt="Shoes 3" /></a>
                     <p>Sneaker Jordan color Rojo</p>
                     <p class="product_price">$ 60</p>
-                    <a href="shoppingcart.html" class="addtocart"></a>
-                    <a href="productdetail.html" class="detail"></a>
+                    <a href="{% url 'carrit' %}" class="addtocart"></a>
+                    <a href="{% url 'products' %}" class="detail"></a>
                 </div>
                 <div class="cleaner"></div>
                 <div class="product_box">
                     <h3>Adidas Busenitz</h3>
-                    <a href="productdetail.html"><img src="{% static '/images/product/04.jpg' %}" alt="Shoes 4" /></a>
+                    <a href="{% url 'products' %}"><img src="{% static '/images/product/04.jpg' %}" alt="Shoes 4" /></a>
                     <p>Sneaker Adidas Negro y Marron</p>
                     <p class="product_price">$ 220</p>
-                    <a href="shoppingcart.html" class="addtocart"></a>
-                    <a href="productdetail.html" class="detail"></a>
+                    <a href="{% url 'carrit' %}" class="addtocart"></a>
+                    <a href="{% url 'products' %}" class="detail"></a>
                 </div>
                 <div class="product_box">
                     <h3>Reebok PUMP II</h3>
-                    <a href="productdetail.html"><img src="{% static '/images/product/05.jpg' %}" alt="Shoes 5" /></a>
+                    <a href="{% url 'products' %}"><img src="{% static '/images/product/05.jpg' %}" alt="Shoes 5" /></a>
                     <p>Sneaker Reebok color Azul,Blanco y Rojo </p>
                     <p class="product_price">$ 180</p>
-                    <a href="shoppingcart.html" class="addtocart"></a>
-                    <a href="productdetail.html" class="detail"></a>
+                    <a href="{% url 'carrit' %}" class="addtocart"></a>
+                    <a href="{% url 'products' %}" class="detail"></a>
                 </div>
                 <div class="product_box no_margin_right">
                     <h3>Air Force 2</h3>
-                    <a href="productdetail.html"><img src="{% static '/images/product/06.jpg' %}" alt="Shoes 6" /></a>
+                    <a href="{% url 'products' %}"><img src="{% static '/images/product/06.jpg' %}" alt="Shoes 6" /></a>
                     <p>Sneaker Nike Marron y Blanco</p>
                     <p class="product_price">$ 160</p>
-                    <a href="shoppingcart.html" class="addtocart"></a>
-                    <a href="productdetail.html" class="detail"></a>
+                    <a href="{% url 'carrit' %}" class="addtocart"></a>
+                    <a href="{% url 'products' %}" class="detail"></a>
                 </div>
             </div>
             <div class="cleaner"></div>
@@ -180,7 +180,7 @@
             Copyright © 2022 <a href="{% url 'index' %}">Seankers Deusto</a>
         </div>
     </div>
-    
+
 
 </body>
 

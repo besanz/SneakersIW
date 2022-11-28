@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Iniciar Sesion</title>
-    </head>
-    <body>
-        <p>Inicio de sesión requerido</p>
-        <form method="post">
-            {% csrf_token %}
-            <label for="usuario">
-                usuario
-                <input type="text" name="username">
-            </label>
 
-            <label for="pass">
-                contraseña
-                <input type="password" name="password">
-            </label>
-            <br/>
-            <br/>
-            <button type="submit">Iniciar sesión</button>
+<head>
+  <meta charset="UTF-8">
+  <title>Iniciar Sesion</title>
+</head>
 
+<body>
+  <p>Inicio de sesión requerido</p>
+  <form method="post">
+    {% csrf_token %}
+    <label for="usuario">
+      <p>Usuario</p>
+      <input type="text" name="username">
+    </label>
 
-            <a href="{% url 'Autenticacion' %}">¿No tienes cuenta?Regístrate</a>
-            
-        </form>
-    </body>
+    <label for="pass">
+      <p>Contraseña</p>
+      <input type="password" name="password">
+    </label>
+    <br />
+    <br />
+    <button type="submit">Iniciar sesión</button>
+    <a href="{% url 'Autenticacion' %}">¿No tienes cuenta?Regístrate</a>
+  </form>
+</body>
+
 </html>
