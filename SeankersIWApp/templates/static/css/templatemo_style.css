@@ -46,6 +46,8 @@ h6 { font-size: 12px; margin: 0 0 5px; padding: 0; }
 .float_l { float: left }
 .float_r { float: right }
 
+
+
 #templatemo_body_wrapper {
 	width: 100%;
 	background: url(images/templatemo_body_top.jpg) repeat-x top
@@ -79,8 +81,9 @@ h6 { font-size: 12px; margin: 0 0 5px; padding: 0; }
 #sidebar { width: 220px }
 
 #templatemo_footer {
+	
 	width: 960px;
-	padding: 30px 10px;
+	padding: 13px 10px;
 	text-align: center;
 	background: url(images/templatemo_footer.png) no-repeat top
 }
@@ -138,6 +141,7 @@ h6 { font-size: 12px; margin: 0 0 5px; padding: 0; }
 .sidebar_box h3 { font-size: 14px; font-weight: 700; padding: 0 10px 0 35px; margin: 0; width: 185px; height: 33px; line-height: 33px; margin-bottom: 0; background: url(images/templatemo_sidebar_header.png)  no-repeat; color: #2f2f2f }
 
 #sidebar .sidebar_box .content {
+
 	padding: 10px 10px 0;
 }
 
