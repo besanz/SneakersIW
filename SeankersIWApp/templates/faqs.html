@@ -1,119 +1,144 @@
 {% load static %}
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Seankers Shop - FAQs</title>
-<meta name="keywords" content="" />
-<meta name="description" content="" />
-<link href="{% static '/css/templatemo_style.css' %}" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="{% static '/css/nivo-slider.css' %}" type="text/css" media="screen" />
-<link rel="stylesheet" type="text/css" href="{% static '/css/ddsmoothmenu.css' %}" />
-<link rel="stylesheet" type="text/css" href="{% static '/css/slimbox2.css' %}" />
-<script type="text/javascript" src="{% static '/js/jquery.min.js' %}"></script>
-<script type="text/javascript" src="{% static '/js/ddsmoothmenu.js' %}">
-</script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Seankers Shop - FAQs</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link href="{% static '/css/templatemo_style.css' %}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{% static '/css/nivo-slider.css' %}" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{% static '/css/ddsmoothmenu.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static '/css/slimbox2.css' %}" />
+    <script type="text/javascript" src="{% static '/js/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/ddsmoothmenu.js' %}">
+    </script>
 </head>
+
 <body>
-<div id="templatemo_body_wrapper">
-    <div id="templatemo_menubar">
-    	<div id="top_nav" class="ddsmoothmenu">
-            <ul>
-                <li><a href="{% url 'index' %}">Inicio</a></li>
-                <li><a href="{% url 'products' %}">Sneakers</a></li>
-                <li><a href="{% url 'about' %}">Acerca de</a></li>
-                <li><a href="{% url 'faqs' %}" class="selected">FAQs</a></li>
-                <li><a href="{% url 'carrit' %}">Carrito</a></li>
-            </ul>
-            <br style="clear: left" />
-        </div> 
-        <div style="text-align: right;margin-right: -250px;color:white;font-size: 20px;padding-top: 10px;">
-
-            {% if user.is_authenticated %}
-
-            Usuario: {{user.username}}
-            
-
-            {% else %}
-
-            No autenticado. Por favor registrese.
-
-            {% endif %}
-
-        </div>
-        <div id="templatemo_search">
-            <form action="#" method="get">
-              <input type="text" value=" " name="keyword" id="keyword" title="keyword" onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
-              <input type="submit" name="Search" value=" " alt="Search" id="searchbutton" title="Search" class="sub_btn"  />
-            </form>
-        </div>
-    </div>   
-    <div id="templatemo_main">
-    	<div id="sidebar" class="float_l">
-        	<div class="sidebar_box"><span class="bottom"></span>
-            	<h3>Categorias</h3>   
-                <div class="content"> 
-                    {% for sneaker in sneakers %}
-                	<ul class="sidebar_list">
-                        
-                    	<li class="first"><a href="{{ sneaker.get_absolute_url }}">{{sneaker.nombre}}</a></li>
-                    </ul>
-                    {% endfor %}
-                </div>
+    <div id="templatemo_body_wrapper">
+        <div id="templatemo_menubar">
+            <div id="top_nav" class="ddsmoothmenu">
+                <ul>
+                    <li><a href="{% url 'index' %}">Inicio</a></li>
+                    <li><a href="{% url 'products' %}">Sneakers</a></li>
+                    <li><a href="{% url 'about' %}">Acerca de</a></li>
+                    <li><a href="{% url 'faqs' %}" class="selected">FAQs</a></li>
+                    <li><a href="{% url 'carrit' %}">Carrito</a></li>
+                </ul>
+                <br style="clear: left" />
             </div>
-            <div class="sidebar_box"><span class="bottom"></span>
-            	<h3>Proximamente...</h3>   
-                <div class="content"> 
-                	<div class="bs_box">
-                    	<a href="{% url 'products' %}"><img src="{% static '/images/product/08.jpg' %}" alt="image" /></a>
-                        <h4><a href="{% url 'products' %}">REEBOK QUESTION</a></h4>
-                        <p class="price">$120</p>
-                        <div class="cleaner"></div>
-                    </div>
-                    <div class="bs_box">
-                    	<a href="{% url 'products' %}"><img src="{% static '/images/product/04.jpg' %}" alt="image" /></a>
-                        <h4><a href="{% url 'products' %}">NEW BALANCE ONE</a></h4>
-                        <p class="price">$130</p>
-                        <div class="cleaner"></div>
-                    </div>
-                    <div class="bs_box">
-                    	<a href="{% url 'products' %}"><img src="{% static '/images/product/02.jpg' %}" alt="image" /></a>
-                        <h4><a href="{% url 'products' %}">CONVERSE ALL STARS</a></h4>
-                        <p class="price">$88</p>
-                        <div class="cleaner"></div>
-                    </div>
-                    <div class="bs_box">
-                    	<a href="{% url 'products' %}"><img src="{% static '/images/product/01.jpg' %}" alt="image" /></a>
-                        <h4><a href="{% url 'products' %}">OFF-WHITE VULCZ</a></h4>
-                        <p class="price">$380</p>
-                        <div class="cleaner"></div>
-                    </div>
-                </div>
+            <div style="text-align: right;margin-right: -250px;color:white;font-size: 20px;padding-top: 10px;">
+
+                {% if user.is_authenticated %}
+
+                Usuario: {{user.username}}
+
+
+                {% else %}
+
+                No autenticado. Por favor registrese.
+
+                {% endif %}
+
+            </div>
+            <div id="templatemo_search">
+                <form action="#" method="get">
+                    <input type="text" value=" " name="keyword" id="keyword" title="keyword" onfocus="clearText(this)"
+                        onblur="clearText(this)" class="txt_field" />
+                    <input type="submit" name="Search" value=" " alt="Search" id="searchbutton" title="Search"
+                        class="sub_btn" />
+                </form>
             </div>
         </div>
-        <div id="content" class="float_r faqs">
-        	<h1>FAQs</h1>
-            <h5>¿Cómo puedo saber si mi pedido ha sido realizado?</h5>
-            <p>Recibirá un correo electrónico confirmando que su pedido ha sido recibido. Si no recibe una confirmación por correo electrónico, inicie sesión para ver el estado de su pedido.</p>
-          <h5>¿Cuándo se enviará mi pedido?</h5>
-            <p>Lea nuestra política de envíos.</a></p>
-            <h5>¿Qué métodos de pago aceptan?</h5>
-            <p>PayPal y 2Checkout (2CO)</p>
-            <h5>¿Puedo devolver o cambiar mi compra si no me gusta?</h5>
-            <p>Lea nuestra política de cambios.</p>
-            <h5>¿Cómo puedo saber si los pedidos en línea son seguros?</h5>
-            <p>
-                La protección de su información es una prioridad para este sitio. Utilizamos Secure Sockets Layer (SSL) para encriptar el número de su tarjeta de crédito, su nombre y su dirección, de modo que sólo este sitio pueda descifrar su información. SSL es el método estándar de la industria para que los ordenadores se comuniquen de forma segura sin riesgo de interceptación de datos, manipulación o suplantación del destinatario. Para asegurarse de que su conexión es segura; cuando esté en la Cesta de la Compra, mire la esquina inferior de la ventana de su navegador. Si ve una llave sin romper o un candado cerrado, el SSL está activo y su información está segura. Dado que la mayoría de los clientes todavía se sienten incómodos al proporcionar su tarjeta de crédito en línea, utilizamos los servicios de PayPal y 2CheckOut y no necesitan dar información de la tarjeta de crédito.</p>
-            <h5>¿Cuál es su política de privacidad?</h5>
-            <p>Este sitio web respeta su privacidad y se asegura de que entienda qué información necesitamos para completar su pedido, y qué información puede elegir compartir con nosotros y con nuestros socios de marketing.  Para obtener información completa sobre nuestra política de privacidad, visite nuestra página.</p>
-        </div> 
-        <div class="cleaner"></div>
-    </div> 
-    <div id="templatemo_footer">
-    	<p><a href="{% url 'index' %}">Inicio</a> | <a href="{% url 'products' %}">Sneakers</a> | <a href="{% url 'about' %}">Acerca de</a> | <a href="{% url 'faqs' %}">FAQs</a> | <a href="{% url 'carrit' %}">Carrito</a>
-		</p>
-    	Copyright © 2022 <a href="{% url 'index' %}">Seankers Deusto</a></div> 
-</div> 
-</div>
+        <div id="templatemo_main">
+            <div id="sidebar" class="float_l">
+                <div class="sidebar_box"><span class="bottom"></span>
+                    <h3>Categorias</h3>
+                    <div class="content">
+                        {% for sneaker in sneakers %}
+                        <ul class="sidebar_list">
+
+                            <li class="first"><a href="{{ sneaker.get_absolute_url }}">{{sneaker.nombre}}</a></li>
+                        </ul>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="sidebar_box"><span class="bottom"></span>
+                    <h3>Proximamente...</h3>
+                    <div class="content">
+                        <div class="bs_box">
+                            <a href="{% url 'products' %}"><img src="{% static '/images/product/08.jpg' %}"
+                                    alt="image" /></a>
+                            <h4><a href="{% url 'products' %}">REEBOK QUESTION</a></h4>
+                            <p class="price">$120</p>
+                            <div class="cleaner"></div>
+                        </div>
+                        <div class="bs_box">
+                            <a href="{% url 'products' %}"><img src="{% static '/images/product/04.jpg' %}"
+                                    alt="image" /></a>
+                            <h4><a href="{% url 'products' %}">NEW BALANCE ONE</a></h4>
+                            <p class="price">$130</p>
+                            <div class="cleaner"></div>
+                        </div>
+                        <div class="bs_box">
+                            <a href="{% url 'products' %}"><img src="{% static '/images/product/02.jpg' %}"
+                                    alt="image" /></a>
+                            <h4><a href="{% url 'products' %}">CONVERSE ALL STARS</a></h4>
+                            <p class="price">$88</p>
+                            <div class="cleaner"></div>
+                        </div>
+                        <div class="bs_box">
+                            <a href="{% url 'products' %}"><img src="{% static '/images/product/01.jpg' %}"
+                                    alt="image" /></a>
+                            <h4><a href="{% url 'products' %}">OFF-WHITE VULCZ</a></h4>
+                            <p class="price">$380</p>
+                            <div class="cleaner"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="content" class="float_r faqs">
+                <h1>FAQs</h1>
+                <h5>¿Cómo puedo saber si mi pedido ha sido realizado?</h5>
+                <p>Recibirá un correo electrónico confirmando que su pedido ha sido recibido. Si no recibe una
+                    confirmación por correo electrónico, inicie sesión para ver el estado de su pedido.</p>
+                <h5>¿Cuándo se enviará mi pedido?</h5>
+                <p>Lea nuestra política de envíos.</p>
+                <h5>¿Qué métodos de pago aceptan?</h5>
+                <p>PayPal y 2Checkout (2CO)</p>
+                <h5>¿Puedo devolver o cambiar mi compra si no me gusta?</h5>
+                <p>Lea nuestra política de cambios.</p>
+                <h5>¿Cómo puedo saber si los pedidos en línea son seguros?</h5>
+                <p>
+                    La protección de su información es una prioridad para este sitio. Utilizamos Secure Sockets Layer
+                    (SSL) para encriptar el número de su tarjeta de crédito, su nombre y su dirección, de modo que sólo
+                    este sitio pueda descifrar su información. SSL es el método estándar de la industria para que los
+                    ordenadores se comuniquen de forma segura sin riesgo de interceptación de datos, manipulación o
+                    suplantación del destinatario. Para asegurarse de que su conexión es segura; cuando esté en la Cesta
+                    de la Compra, mire la esquina inferior de la ventana de su navegador. Si ve una llave sin romper o
+                    un candado cerrado, el SSL está activo y su información está segura. Dado que la mayoría de los
+                    clientes todavía se sienten incómodos al proporcionar su tarjeta de crédito en línea, utilizamos los
+                    servicios de PayPal y 2CheckOut y no necesitan dar información de la tarjeta de crédito.</p>
+                <h5>¿Cuál es su política de privacidad?</h5>
+                <p>Este sitio web respeta su privacidad y se asegura de que entienda qué información necesitamos para
+                    completar su pedido, y qué información puede elegir compartir con nosotros y con nuestros socios de
+                    marketing. Para obtener información completa sobre nuestra política de privacidad, visite nuestra
+                    página.</p>
+            </div>
+            <div class="cleaner"></div>
+        </div>
+        <div id="templatemo_footer">
+            <p><a href="{% url 'index' %}">Inicio</a> | <a href="{% url 'products' %}">Sneakers</a> | <a
+                    href="{% url 'about' %}">Acerca de</a> | <a href="{% url 'faqs' %}">FAQs</a> | <a
+                    href="{% url 'carrit' %}">Carrito</a>
+            </p>
+            Copyright © 2022 <a href="{% url 'index' %}">Seankers Deusto</a>
+        </div>
+    </div>
+    
 </body>
+
 </html>

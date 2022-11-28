@@ -1,122 +1,139 @@
 {% load static %}
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Seankers Shop- About</title>
-<meta name="keywords" content="" />
-<meta name="description" content="" />
-<link href="{% static '/css/templatemo_style.css' %}" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="{% static '/css/nivo-slider.css' %}" type="text/css" media="screen" />
-<link rel="stylesheet" type="text/css" href="{% static '/css/ddsmoothmenu.css' %}" />
-<link rel="stylesheet" type="text/css" href="{% static '/css/slimbox2.css' %}" />
-<script type="text/javascript" src="{% static '/js/jquery.min.js' %}"></script>
-<script type="text/javascript" src="{% static '/js/ddsmoothmenu.js' %}">
-</script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Seankers Shop- About</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link href="{% static '/css/templatemo_style.css' %}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{% static '/css/nivo-slider.css' %}" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{% static '/css/ddsmoothmenu.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static '/css/slimbox2.css' %}" />
+    <script type="text/javascript" src="{% static '/js/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/ddsmoothmenu.js' %}">
+    </script>
 </head>
+
 <body>
-<div id="templatemo_body_wrapper">
-    <div id="templatemo_menubar">
-    	<div id="top_nav" class="ddsmoothmenu">
-            <ul>
-                <li><a href="{% url 'index' %}">Inicio</a></li>
-                <li><a href="{% url 'products' %}">Sneakers</a></li>
-                <li><a href="{% url 'about' %}"  class="selected">Acerca de</a></li>
-                <li><a href="{% url 'faqs' %}">FAQs</a></li>
-                <li><a href="{% url 'carrit' %}">Carrito</a></li>
-            </ul>
-            <br style="clear: left" />
-        </div> 
-        <div style="text-align: right;margin-right: -250px;color:white;font-size: 20px;padding-top: 10px;">
-
-            {% if user.is_authenticated %}
-
-            Usuario: {{user.username}}
-            
-
-            {% else %}
-
-            No autenticado. Por favor registrese.
-
-            {% endif %}
-
-        </div>
-        <div id="templatemo_search">
-            <form action="#" method="get">
-              <input type="text" value=" " name="keyword" id="keyword" title="keyword" onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
-              <input type="submit" name="Search" value=" " alt="Search" id="searchbutton" title="Search" class="sub_btn"  />
-            </form>
-        </div>
-    </div>   
-    <div id="templatemo_main">
-    	<div id="sidebar" class="float_l">
-        	<div class="sidebar_box"><span class="bottom"></span>
-            	<h3>Categorias</h3>   
-                <div class="content"> 
-                    {% for sneaker in sneakers %}
-                	<ul class="sidebar_list">
-                        
-                    	<li class="first"><a href="{{ sneaker.get_absolute_url }}">{{sneaker.nombre}}</a></li>
-                    </ul>
-                    {% endfor %}
-                </div>
+    <div id="templatemo_body_wrapper">
+        <div id="templatemo_menubar">
+            <div id="top_nav" class="ddsmoothmenu">
+                <ul>
+                    <li><a href="{% url 'index' %}">Inicio</a></li>
+                    <li><a href="{% url 'products' %}">Sneakers</a></li>
+                    <li><a href="{% url 'about' %}" class="selected">Acerca de</a></li>
+                    <li><a href="{% url 'faqs' %}">FAQs</a></li>
+                    <li><a href="{% url 'carrit' %}">Carrito</a></li>
+                </ul>
+                <br style="clear: left" />
             </div>
-            <div class="sidebar_box"><span class="bottom"></span>
-            	<h3>Proximamente...</h3>   
-                <div class="content"> 
-                	<div class="bs_box">
-                    	<a href="{% url 'products' %}"><img src="{% static '/images/product/08.jpg' %}" alt="image" /></a>
-                        <h4><a href="{% url 'products' %}">REEBOK QUESTION</a></h4>
-                        <p class="price">$120</p>
-                        <div class="cleaner"></div>
-                    </div>
-                    <div class="bs_box">
-                    	<a href="{% url 'products' %}"><img src="{% static '/images/product/04.jpg' %}" alt="image" /></a>
-                        <h4><a href="{% url 'products' %}">NEW BALANCE ONE</a></h4>
-                        <p class="price">$130</p>
-                        <div class="cleaner"></div>
-                    </div>
-                    <div class="bs_box">
-                    	<a href="{% url 'products' %}"><img src="{% static '/images/product/02.jpg' %}" alt="image" /></a>
-                        <h4><a href="{% url 'products' %}">CONVERSE ALL STARS</a></h4>
-                        <p class="price">$88</p>
-                        <div class="cleaner"></div>
-                    </div>
-                    <div class="bs_box">
-                    	<a href="{% url 'products' %}"><img src="{% static '/images/product/01.jpg' %}" alt="image" /></a>
-                        <h4><a href="{% url 'products' %}">OFF-WHITE VULCZ</a></h4>
-                        <p class="price">$380</p>
-                        <div class="cleaner"></div>
-                    </div>
-                </div>
+            <div style="text-align: right;margin-right: -250px;color:white;font-size: 20px;padding-top: 10px;">
+
+                {% if user.is_authenticated %}
+
+                Usuario: {{user.username}}
+
+
+                {% else %}
+
+                No autenticado. Por favor, registrese.
+
+                {% endif %}
+
+            </div>
+            <div id="templatemo_search">
+                <form action="#" method="get">
+                    <input type="text" value=" " name="keyword" id="keyword" title="keyword" onfocus="clearText(this)"
+                        onblur="clearText(this)" class="txt_field" />
+                    <input type="submit" name="Search" value=" " alt="Search" id="searchbutton" title="Search"
+                        class="sub_btn" />
+                </form>
             </div>
         </div>
-        <div id="content" class="float_r">
-        	<h1>About Us</h1>
-        	<h2>Company Background</h2>
-        <p>Validate <a href="http://validator.w3.org/check?uri=referer" rel="nofollow">XHTML</a> &amp; <a href="http://jigsaw.w3.org/css-validator/check/referer" rel="nofollow">CSS</a>. Donec sapien. Nam ac nunc. Aliquam fermentum cursus risus. Aliquam erat volutpat. Morbi a augue eget orci sodales blandit. Morbi et mi in mi eleifend adipiscing. Nullam id quam a ligula semper feugiat. Sed ultricies. Nulla et pede eu pede ultrices commodo. Nulla semper accumsan pede. Donec ut quam. Quisque egestas felis in diam.</p>
-        <ul class="tmo_list">
-        	<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-            <li>Pellentesque quis nulla id orci malesuada porta posuere quis massa.</li>
-            <li>Nunc vitae purus non augue scelerisque ultricies vitae et velit quis.</li>
-            <li>Aliquam fermentum cursus risus aliquam erat volutpat.</li>
-            <li>Morbi a augue eget orci sodales blandit morbiet mi in mi eleifend adipiscing.</li>
-		</ul>
-        <div class="cleaner h20"></div>
-        <h3>Management Team</h3>
-		<p>Nam nec leo. Curabitur quis eros a arcu feugiat egestas. Nunc sagittis, dui non porttitor tincidunt, mi tortor tincidunt sem, et aliquet mi tortor eu turpis. Ut nisi ligula, viverra ac, placerat sed, ultricies vitae, neque. Morbi feugiat neque non odio eleifend pulvinar.</p>
-        <div class="cleaner"></div>
-        <blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quis nulla id orci malesuada porta posuere quis massa. Nunc vitae purus non augue scelerisque ultricies vitae et velit quis nulla id orci malesua.
-        </blockquote>
-        </div> 
-        <div class="cleaner"></div>
-    </div> 
-    <div id="templatemo_footer">
-    	<p><a href="{% url 'index' %}">Inicio</a> | <a href="{% url 'products' %}">Sneakers</a> | <a href="{% url 'about' %}">Acerca de</a> | <a href="{% url 'faqs' %}">FAQs</a> | <a href="{% url 'carrit' %}">Carrito</a>
-		</p>
-    	Copyright © 2022 <a href="{% url 'index' %}">Seankers Deusto</a></div> 
-    </div> 
-</div> 
-</div> 
+        <div id="templatemo_main">
+            <div id="sidebar" class="float_l">
+                <div class="sidebar_box"><span class="bottom"></span>
+                    <h3>Categorias</h3>
+                    <div class="content">
+                        {% for sneaker in sneakers %}
+                        <ul class="sidebar_list">
+
+                            <li class="first"><a href="{{ sneaker.get_absolute_url }}">{{sneaker.nombre}}</a></li>
+                        </ul>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="sidebar_box"><span class="bottom"></span>
+                    <h3>Proximamente...</h3>
+                    <div class="content">
+                        <div class="bs_box">
+                            <a href="{% url 'products' %}"><img src="{% static '/images/product/08.jpg' %}"
+                                    alt="image" /></a>
+                            <h4><a href="{% url 'products' %}">REEBOK QUESTION</a></h4>
+                            <p class="price">$120</p>
+                            <div class="cleaner"></div>
+                        </div>
+                        <div class="bs_box">
+                            <a href="{% url 'products' %}"><img src="{% static '/images/product/04.jpg' %}"
+                                    alt="image" /></a>
+                            <h4><a href="{% url 'products' %}">NEW BALANCE ONE</a></h4>
+                            <p class="price">$130</p>
+                            <div class="cleaner"></div>
+                        </div>
+                        <div class="bs_box">
+                            <a href="{% url 'products' %}"><img src="{% static '/images/product/02.jpg' %}"
+                                    alt="image" /></a>
+                            <h4><a href="{% url 'products' %}">CONVERSE ALL STARS</a></h4>
+                            <p class="price">$88</p>
+                            <div class="cleaner"></div>
+                        </div>
+                        <div class="bs_box">
+                            <a href="{% url 'products' %}"><img src="{% static '/images/product/01.jpg' %}"
+                                    alt="image" /></a>
+                            <h4><a href="{% url 'products' %}">OFF-WHITE VULCZ</a></h4>
+                            <p class="price">$380</p>
+                            <div class="cleaner"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="content" class="float_r">
+                <h1>Acerca de</h1>
+                <h2>Sobre nosotros</h2>
+                <p>Nuestro equipo está compuesto por expertos globales, profesionales apasionados cuya motivación y
+                    dedicación a su trabajo.</p>
+                <p>Nuestros productos son los mejores del mundo</p>
+                <div class="cleaner h20"></div>
+                <h3>El equipo</h3>
+                <p>Somos 4 estudiantes de Deusto Business School. Nuestro equipo humano se compone de jóvenes talentos y
+                    de personas con amplio conocimiento del sector, lo cual crea el equilibrio perfecto entre innovación
+                    y experiencia. Creemos firmemente que las personas son nuestro activo más importante, por lo que
+                    promovemos políticas de igualdad y diversidad, formamos continuamente a nuestro equipo y, además,
+                    hacemos especial hincapié en las políticas de prevención de riesgos laborales para garantizar la
+                    seguridad en el trabajo. Nuestros empleados y empleadas están comprometidos con nuestros servicios y
+                    con el grupo, dado que tienen a su vez nuestro compromiso como grupo: sentimos que tenemos la
+                    obligación de ofrecer un entorno agradable, saludable y sin discriminaciones de ningún tipo. De esta
+                    manera fomentamos la confianza y atraemos y retenemos el talento.</p>
+                <div class="cleaner"></div>
+                <blockquote>Nos esforzamos por conseguir diseños que adopten una actitud moderna para una vida creativa,
+                    combinando a la perfección la comodidad, el minimalismo y la elegancia en cada corte.
+                </blockquote>
+            </div>
+            <div class="cleaner"></div>
+        </div>
+        <div id="templatemo_footer">
+            <p><a href="{% url 'index' %}">Inicio</a> | <a href="{% url 'products' %}">Sneakers</a> | <a
+                    href="{% url 'about' %}">Acerca de</a> | <a href="{% url 'faqs' %}">FAQs</a> | <a
+                    href="{% url 'carrit' %}">Carrito</a>
+            </p>
+            Copyright © 2022 <a href="{% url 'index' %}">Seankers Deusto</a>
+        </div>
+    </div>
+    
+    
 </body>
+
 </html>

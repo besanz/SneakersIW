@@ -1,19 +1,29 @@
+<!DOCTYPE html>
 {% load static %}
 
 {% load bootstrap4 %}
 
 {% load crispy_forms_tags %}
+<html>
 
-{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 
-<form method="post" action="">
-    {% csrf_token %}
+<body>
+    <form method="post" action="">
+        {% csrf_token %}
 
-    {{form|crispy}}
+        {{form|crispy}}
 
-    <br/>
+        <br />
 
-    <button type="submit" class="btn btn-success">Registrate</button>
-</form>
+        <button type="submit" class="btn btn-success">Registrate</button>
+    </form>
 
-{% endblock %}
+</body>
+
+</html>

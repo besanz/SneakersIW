@@ -1,174 +1,187 @@
 {% load static %}
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Seankers Shop</title>
-<meta name="keywords" content="" />
-<meta name="description" content="" />
-<link href="{% static '/css/templatemo_style.css' %}" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="{% static '/css/nivo-slider.css' %}" type="text/css" media="screen" />
-<link rel="stylesheet" type="text/css" href="{% static '/css/ddsmoothmenu.css' %}" />
-<link rel="stylesheet" type="text/css" href="{% static '/css/slimbox2.css' %}" />
-<script type="text/javascript" src="{% static '/js/jquery.min.js' %}"></script>
-<script type="text/javascript" src="{% static '/js/ddsmoothmenu.js' %}">
-</script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Seankers Shop</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link href="{% static '/css/templatemo_style.css' %}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{% static '/css/nivo-slider.css' %}" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{% static '/css/ddsmoothmenu.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static '/css/slimbox2.css' %}" />
+    <script type="text/javascript" src="{% static '/js/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/ddsmoothmenu.js' %}">
+    </script>
 </head>
+
 <body>
-<div id="templatemo_body_wrapper">
-    <div id="templatemo_menubar">
-    	<div id="top_nav" class="ddsmoothmenu">
-            <ul>
-                <li><a href="index.html" class="selected">Inicio</a></li>
-                <li><a href="{% url 'products' %}">Sneakers</a></li>
-                <li><a href="{% url 'about' %}">Acerca de</a></li>
-                <li><a href="{% url 'faqs' %}">FAQs</a></li>
-                <li><a href="{% url 'carrit' %}">Carrito</a></li>
-            </ul>
-            <br style="clear: left" />
-        </div> 
-        <div style="text-align: right;margin-right: -250px;color:white;font-size: 20px;padding-top: 10px;">
+    <div id="templatemo_body_wrapper">
+        <div id="templatemo_menubar">
+            <div id="top_nav" class="ddsmoothmenu">
+                <ul>
+                    <li><a href="index.html" class="selected">Inicio</a></li>
+                    <li><a href="{% url 'products' %}">Sneakers</a></li>
+                    <li><a href="{% url 'about' %}">Acerca de</a></li>
+                    <li><a href="{% url 'faqs' %}">FAQs</a></li>
+                    <li><a href="{% url 'carrit' %}">Carrito</a></li>
+                </ul>
+                <br style="clear: left" />
+            </div>
+            <div style="text-align: right;margin-right: -250px;color:white;font-size: 20px;padding-top: 10px;">
 
-            {% if user.is_authenticated %}
+                {% if user.is_authenticated %}
 
-            Usuario: {{user.username}}
-            
+                Usuario: {{user.username}}
 
-            {% else %}
+                <a href="{% url 'logout' %}">Logout</a>
 
-            No autenticado. Por favor registrese.
+                {% else %}
 
-            {% endif %}
+                No autenticado. Por favor registrese. <a href="{% url 'logout' %}">Login</a>
 
-        </div>
-        <div id="templatemo_search">
+                {% endif %}
+
+            </div>
+            <!-- <div id="templatemo_search">
             <form action="#" method="get">
               <input type="text" value=" " name="keyword" id="keyword" title="keyword" onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
               <input type="submit" name="Search" value=" " alt="Search" id="searchbutton" title="Search" class="sub_btn"  />
             </form>
+        </div> -->
         </div>
-    </div>   
-    <div id="templatemo_main">
-    	<div id="sidebar" class="float_l">
-        	<div class="sidebar_box"><span class="bottom"></span>
-            	<h3>Categorias</h3>   
-                <div class="content"> 
-                    {% for sneaker in sneakers %}
-                	<ul class="sidebar_list">
-                        
-                    	<li class="first"><a href="{{ sneaker.get_absolute_url }}">{{sneaker.nombre}}</a></li>
-                    </ul>
-                    {% endfor %}
+        <div id="templatemo_main">
+            <div id="sidebar" class="float_l">
+                <div class="sidebar_box"><span class="bottom"></span>
+                    <h3>Categorias</h3>
+                    <div class="content">
+                        {% for sneaker in sneakers %}
+                        <ul class="sidebar_list">
+
+                            <li class="first"><a href="{{ sneaker.get_absolute_url }}">{{sneaker.nombre}}</a></li>
+                        </ul>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="sidebar_box"><span class="bottom"></span>
+                    <h3>Proximamente...</h3>
+                    <div class="content">
+                        <div class="bs_box">
+                            <a href="{% url 'products' %}"><img src="{% static '/images/product/08.jpg' %}"
+                                    alt="image" /></a>
+                            <h4><a href="{% url 'products' %}">REEBOK QUESTION</a></h4>
+                            <p class="price">$120</p>
+                            <div class="cleaner"></div>
+                        </div>
+                        <div class="bs_box">
+                            <a href="{% url 'products' %}"><img src="{% static '/images/product/04.jpg' %}"
+                                    alt="image" /></a>
+                            <h4><a href="{% url 'products' %}">NEW BALANCE ONE</a></h4>
+                            <p class="price">$130</p>
+                            <div class="cleaner"></div>
+                        </div>
+                        <div class="bs_box">
+                            <a href="{% url 'products' %}"><img src="{% static '/images/product/02.jpg' %}"
+                                    alt="image" /></a>
+                            <h4><a href="{% url 'products' %}">CONVERSE ALL STARS</a></h4>
+                            <p class="price">$88</p>
+                            <div class="cleaner"></div>
+                        </div>
+                        <div class="bs_box">
+                            <a href="{% url 'products' %}"><img src="{% static '/images/product/01.jpg' %}"
+                                    alt="image" /></a>
+                            <h4><a href="{% url 'products' %}">OFF-WHITE VULCZ</a></h4>
+                            <p class="price">$380</p>
+                            <div class="cleaner"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="sidebar_box"><span class="bottom"></span>
-            	<h3>Proximamente...</h3>   
-                <div class="content"> 
-                	<div class="bs_box">
-                    	<a href="{% url 'products' %}"><img src="{% static '/images/product/08.jpg' %}" alt="image" /></a>
-                        <h4><a href="{% url 'products' %}">REEBOK QUESTION</a></h4>
-                        <p class="price">$120</p>
-                        <div class="cleaner"></div>
+            <div id="content" class="float_r">
+                <div id="slider-wrapper">
+                    <div id="slider" class="nivoSlider">
+                        <img src="{% static '/images/slider/02.jpg' %}" alt="" />
+                        <a href="#"><img src="{% static '/images/slider/01.jpg' %}" alt=""
+                                title="Solo disponible en España" /></a>
+                        <img src="{% static '/images/slider/03.jpg' %}" alt="" />
+                        <img src="{% static '/images/slider/04.jpg' %}" alt="" title="#htmlcaption" />
                     </div>
-                    <div class="bs_box">
-                    	<a href="{% url 'products' %}"><img src="{% static '/images/product/04.jpg' %}" alt="image" /></a>
-                        <h4><a href="{% url 'products' %}">NEW BALANCE ONE</a></h4>
-                        <p class="price">$130</p>
-                        <div class="cleaner"></div>
+                    <div id="htmlcaption" class="nivo-html-caption">
+                        Proyecto en <strong>Django</strong> y <em>HTML</em> para Deusto.
                     </div>
-                    <div class="bs_box">
-                    	<a href="{% url 'products' %}"><img src="{% static '/images/product/02.jpg' %}" alt="image" /></a>
-                        <h4><a href="{% url 'products' %}">CONVERSE ALL STARS</a></h4>
-                        <p class="price">$88</p>
-                        <div class="cleaner"></div>
-                    </div>
-                    <div class="bs_box">
-                    	<a href="{% url 'products' %}"><img src="{% static '/images/product/01.jpg' %}" alt="image" /></a>
-                        <h4><a href="{% url 'products' %}">OFF-WHITE VULCZ</a></h4>
-                        <p class="price">$380</p>
-                        <div class="cleaner"></div>
-                    </div>
+                </div>
+                <script type="text/javascript" src="{% static '/js/jquery-1.4.3.min.js' %}"></script>
+                <script type="text/javascript" src="{% static '/js/jquery.nivo.slider.pack.js' %}"></script>
+                <script type="text/javascript">
+                    $(window).load(function () {
+                        $('#slider').nivoSlider();
+                    });
+                </script>
+                <h1>New Seankers</h1>
+                <div class="product_box">
+                    <h3>Air Force 1</h3>
+                    <a href="productdetail.html"><img src="{% static '/images/product/01.jpg' %}" alt="Shoes 1" /></a>
+                    <p>Sneaker NIKE color Azul.</p>
+                    <p class="product_price">$ 100</p>
+                    <a href="shoppingcart.html" class="addtocart"></a>
+                    <a href="productdetail.html" class="detail"></a>
+                </div>
+                <div class="product_box">
+                    <h3>Dunk Low Panda</h3>
+                    <a href="productdetail.html"><img src="{% static '/images/product/02.jpg' %}" alt="Shoes 2" /></a>
+                    <p>Sneaker NIKE color Negro y Blanco</p>
+                    <p class="product_price">$ 80</p>
+                    <a href="shoppingcart.html" class="addtocart"></a>
+                    <a href="productdetail.html" class="detail"></a>
+                </div>
+                <div class="product_box no_margin_right">
+                    <h3>Air Jordan 4</h3>
+                    <a href="productdetail.html"><img src="{% static '/images/product/03.jpg' %}" alt="Shoes 3" /></a>
+                    <p>Sneaker Jordan color Rojo</p>
+                    <p class="product_price">$ 60</p>
+                    <a href="shoppingcart.html" class="addtocart"></a>
+                    <a href="productdetail.html" class="detail"></a>
+                </div>
+                <div class="cleaner"></div>
+                <div class="product_box">
+                    <h3>Adidas Busenitz</h3>
+                    <a href="productdetail.html"><img src="{% static '/images/product/04.jpg' %}" alt="Shoes 4" /></a>
+                    <p>Sneaker Adidas Negro y Marron</p>
+                    <p class="product_price">$ 220</p>
+                    <a href="shoppingcart.html" class="addtocart"></a>
+                    <a href="productdetail.html" class="detail"></a>
+                </div>
+                <div class="product_box">
+                    <h3>Reebok PUMP II</h3>
+                    <a href="productdetail.html"><img src="{% static '/images/product/05.jpg' %}" alt="Shoes 5" /></a>
+                    <p>Sneaker Reebok color Azul,Blanco y Rojo </p>
+                    <p class="product_price">$ 180</p>
+                    <a href="shoppingcart.html" class="addtocart"></a>
+                    <a href="productdetail.html" class="detail"></a>
+                </div>
+                <div class="product_box no_margin_right">
+                    <h3>Air Force 2</h3>
+                    <a href="productdetail.html"><img src="{% static '/images/product/06.jpg' %}" alt="Shoes 6" /></a>
+                    <p>Sneaker Nike Marron y Blanco</p>
+                    <p class="product_price">$ 160</p>
+                    <a href="shoppingcart.html" class="addtocart"></a>
+                    <a href="productdetail.html" class="detail"></a>
                 </div>
             </div>
+            <div class="cleaner"></div>
         </div>
-        <div id="content" class="float_r">
-        	<div id="slider-wrapper">
-                <div id="slider" class="nivoSlider">
-                    <img src="{% static '/images/slider/02.jpg' %}" alt="" />
-                    <a href="#"><img src="{% static '/images/slider/01.jpg' %}" alt="" title="Solo disponible en España" /></a>
-                    <img src="{% static '/images/slider/03.jpg' %}" alt="" />
-                    <img src="{% static '/images/slider/04.jpg' %}" alt="" title="#htmlcaption" />
-                </div>
-                <div id="htmlcaption" class="nivo-html-caption">
-                    Proyecto en <strong>Django</strong> y <em>HTML</em> para Deusto.
-                </div>
-            </div>
-            <script type="text/javascript" src="{% static '/js/jquery-1.4.3.min.js' %}"></script>
-            <script type="text/javascript" src="{% static '/js/jquery.nivo.slider.pack.js' %}"></script>
-            <script type="text/javascript">
-            $(window).load(function() {
-                $('#slider').nivoSlider();
-            });
-            </script>
-        	<h1>New Seankers</h1>
-            <div class="product_box">
-	            <h3>Air Force 1</h3>
-            	<a href="productdetail.html"><img src="{% static '/images/product/01.jpg' %}" alt="Shoes 1" /></a>
-                <p>Sneaker NIKE color Azul.</p>
-                <p class="product_price">$ 100</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
-                <a href="productdetail.html" class="detail"></a>
-            </div>        	
-            <div class="product_box">
-            	<h3>Dunk Low Panda</h3>
-            	<a href="productdetail.html"><img src="{% static '/images/product/02.jpg' %}" alt="Shoes 2" /></a>
-                <p>Sneaker NIKE color Negro y Blanco</p>
-              <p class="product_price">$ 80</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
-                <a href="productdetail.html" class="detail"></a>
-            </div>        	
-            <div class="product_box no_margin_right">
-            	<h3>Air Jordan 4</h3>
-            	<a href="productdetail.html"><img src="{% static '/images/product/03.jpg' %}" alt="Shoes 3" /></a>
-                <p>Sneaker Jordan color Rojo</p>
-              <p class="product_price">$ 60</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
-                <a href="productdetail.html" class="detail"></a>
-            </div>           
-            <div class="cleaner"></div>                	
-<div class="product_box">
-            	<h3>Adidas Busenitz</h3>
-           	<a href="productdetail.html"><img src="{% static '/images/product/04.jpg' %}" alt="Shoes 4" /></a>
-            <p>Sneaker Adidas Negro y Marron</p>
-      <p class="product_price">$ 220</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
-                <a href="productdetail.html" class="detail"></a>
-            </div>        	
-            <div class="product_box">
-	            <h3>Reebok PUMP II</h3>
-            	<a href="productdetail.html"><img src="{% static '/images/product/05.jpg' %}" alt="Shoes 5" /></a>
-                <p>Sneaker Reebok color Azul,Blanco y Rojo </p>
-              <p class="product_price">$ 180</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
-                <a href="productdetail.html" class="detail"></a>
-            </div>        	
-            <div class="product_box no_margin_right">
-            	<h3>Air Force 2</h3>
-            	<a href="productdetail.html"><img src="{% static '/images/product/06.jpg' %}" alt="Shoes 6" /></a>
-                <p>Sneaker Nike Marron y Blanco</p>
-                <p class="product_price">$ 160</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
-                <a href="productdetail.html" class="detail"></a>
-            </div>        	
+        <div id="templatemo_footer">
+            <p><a href="{% url 'index' %}">Inicio</a> | <a href="{% url 'products' %}">Sneakers</a> | <a
+                    href="{% url 'about' %}">Acerca de</a> | <a href="{% url 'faqs' %}">FAQs</a> | <a
+                    href="{% url 'carrit' %}">Carrito</a>
+            </p>
+            Copyright © 2022 <a href="{% url 'index' %}">Seankers Deusto</a>
         </div>
-        <div class="cleaner"></div>
-    </div> 
-    <div id="templatemo_footer">
-    	<p><a href="{% url 'index' %}">Inicio</a> | <a href="{% url 'products' %}">Sneakers</a> | <a href="{% url 'about' %}">Acerca de</a> | <a href="{% url 'faqs' %}">FAQs</a> | <a href="{% url 'carrit' %}">Carrito</a>
-		</p>
-    	Copyright © 2022 <a href="{% url 'index' %}">Seankers Deusto</a></div> 
-    </div> 
-</div> 
+    </div>
+    
 
 </body>
+
 </html>
