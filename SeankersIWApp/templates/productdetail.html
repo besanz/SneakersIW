@@ -1,88 +1,56 @@
-{% load static%}
+{% load static %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Seankers Shop</title>
+<title>Seankers Shop - FAQs</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
-<link href="{% static 'css/templatemo_style.css' %}" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" type="text/css" href="{% static 'css/ddsmoothmenu.css' %}" />
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/ddsmoothmenu.js">
+<link href="{% static '/css/templatemo_style.css' %}" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="{% static '/css/nivo-slider.css' %}" type="text/css" media="screen" />
+<link rel="stylesheet" type="text/css" href="{% static '/css/ddsmoothmenu.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static '/css/slimbox2.css' %}" />
+<script type="text/javascript" src="{% static '/js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static '/js/ddsmoothmenu.js' %}">
 </script>
-<script type="text/javascript">
-ddsmoothmenu.init({
-	mainmenuid: "top_nav", 
-	orientation: 'h',
-	classname: 'ddsmoothmenu',
-	contentsource: "markup"
-})
-</script>
-<script type="text/javascript" src="js/jquery-1-4-2.min.js"></script> 
-<link rel="stylesheet" href="{% static 'css/slimbox2.css' %}" type="text/css" media="screen" /> 
-<script type="text/JavaScript" src="js/slimbox2.js"></script> 
 </head>
 <body>
 <div id="templatemo_body_wrapper">
-<div id="templatemo_wrapper">
     <div id="templatemo_menubar">
-        <div id="templatemo_menubar">
-            <div id="top_nav" class="ddsmoothmenu">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html" class="selected">Sneakers</a>
-                        <ul>
-                            <li><a href="#submenu1">Nike</a></li>
-                            <li><a href="#submenu2">Adidas</a></li>
-                            <li><a href="#submenu3">Off-White</a></li>
-                            <li><a href="#submenu4">New Balance 4</a></li>
-                            <li><a href="#submenu5">Reebok</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="about.html">Acerca de</a>
-                        <ul>
-                            <li><a href="#submenu1"></a>Quienes somos</li>
-                            <li><a href="#submenu2">Vision</a></li>
-                            <li><a href="#submenu3">Mision</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="faqs.html">FAQs</a></li>
-                    <li><a href="checkout.html">Carrito</a></li>
-                </ul>
-                <br style="clear: left" />
-            </div> 
-            <div id="templatemo_search">
-                <form action="#" method="get">
-                  <input type="text" value=" " name="keyword" id="keyword" title="keyword" onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
-                  <input type="submit" name="Search" value=" " alt="Search" id="searchbutton" title="Search" class="sub_btn"  />
-                </form>
-            </div>
+    	<div id="top_nav" class="ddsmoothmenu">
+            <ul>
+                <li><a href="{% url 'index' %}">Inicio</a></li>
+                <li><a href="{% url 'products' %}">Sneakers</a></li>
+                <li><a href="{% url 'about' %}">Acerca de</a></li>
+                <li><a href="{% url 'faqs' %}" class="selected">FAQs</a></li>
+                <li><a href="{% url 'carrit' %}">Carrito</a></li>
+            </ul>
+            <br style="clear: left" />
         </div> 
-    </div> 
+        <div style="text-align: right;margin-right: -250px;color:white;font-size: 20px;padding-top: 10px;">
+
+            {% if user.is_authenticated %}
+
+            Usuario: {{user.username}}
+            
+
+            {% else %}
+
+            No autenticado. Por favor registrese.
+
+            {% endif %}
+
+        </div>
+        <div id="templatemo_search">
+            <form action="#" method="get">
+              <input type="text" value=" " name="keyword" id="keyword" title="keyword" onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
+              <input type="submit" name="Search" value=" " alt="Search" id="searchbutton" title="Search" class="sub_btn"  />
+            </form>
+        </div>
+    </div>   
     <div id="templatemo_main">
     	<div id="sidebar" class="float_l">
-        	<div class="sidebar_box"><span class="bottom"></span>
-            	<h3>Categorias</h3>   
-                <div class="content"> 
-                	<ul class="sidebar_list">
-                    	<li class="first"><a href="#">NIKE AIR JORDAN</a></li>
-                        <li><a href="{% url 'products' %}">CONVERSE ALL STARS</a></li>
-                        <li><a href="{% url 'products' %}">NIKE AIR FORCE 1</a></li>
-                        <li><a href="{% url 'products' %}">AIR JORDAN XI</a></li>
-                        <li><a href="{% url 'products' %}">REEBOK PUMP</a></li>
-                        <li><a href="{% url 'products' %}">AIR JORDAN XII</a></li>
-                        <li><a href="{% url 'products' %}">REEBOK QUESTION</a></li>
-                        <li><a href="{% url 'products' %}">AIR PENNY 2.20</a></li>
-                        <li><a href="{% url 'products' %}">NIKE AIR FORCE 2</a></li>
-                        <li><a href="{% url 'products' %}">AIR JORDAN XIV</a></li>
-                        <li><a href="{% url 'products' %}">REEBOK PUMP II</a></li>
-                        <li><a href="{% url 'products' %}">AIR JORDAN XV</a></li>
-                        <li><a href="{% url 'products' %}">REEBOK QUESTION TWO</a></li>
-                        <li class="last"><a href="{% url 'products' %}">AIR PENNY 4.20</a></li>
-                    </ul>
-                </div>
-            </div>
+        	
             <div class="sidebar_box"><span class="bottom"></span>
             	<h3>Proximamente...</h3>   
                 <div class="content"> 

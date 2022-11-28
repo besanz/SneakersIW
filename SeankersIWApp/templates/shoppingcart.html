@@ -1,4 +1,3 @@
-{%load static%}
 {% load static %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -14,75 +13,83 @@
 <script type="text/javascript" src="{% static '/js/jquery.min.js' %}"></script>
 <script type="text/javascript" src="{% static '/js/ddsmoothmenu.js' %}">
 </script>
-<script type="text/javascript">
-ddsmoothmenu.init({
-	mainmenuid: "top_nav", 
-	orientation: 'h',
-	classname: 'ddsmoothmenu',
-	contentsource: "markup"
-})
-</script>
 </head>
 <body>
 <div id="templatemo_body_wrapper">
-<div id="templatemo_wrapper">
     <div id="templatemo_menubar">
-        <div id="templatemo_menubar">
-            <div id="top_nav" class="ddsmoothmenu">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html" class="selected">Sneakers</a>
-                        <ul>
-                            <li><a href="#submenu1">Nike</a></li>
-                            <li><a href="#submenu2">Adidas</a></li>
-                            <li><a href="#submenu3">Off-White</a></li>
-                            <li><a href="#submenu4">New Balance 4</a></li>
-                            <li><a href="#submenu5">Reebok</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="about.html">Acerca de</a>
-                        <ul>
-                            <li><a href="#submenu1"></a>Quienes somos</li>
-                            <li><a href="#submenu2">Vision</a></li>
-                            <li><a href="#submenu3">Mision</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="faqs.html">FAQs</a></li>
-                    <li><a href="checkout.html">Carrito</a></li>
-                </ul>
-                <br style="clear: left" />
-            </div> 
-            <div id="templatemo_search">
-                <form action="#" method="get">
-                  <input type="text" value=" " name="keyword" id="keyword" title="keyword" onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
-                  <input type="submit" name="Search" value=" " alt="Search" id="searchbutton" title="Search" class="sub_btn"  />
-                </form>
-            </div>
+    	<div id="top_nav" class="ddsmoothmenu">
+            <ul>
+                <li><a href="{% url 'index' %}">Inicio</a></li>
+                <li><a href="{% url 'products' %}">Sneakers</a></li>
+                <li><a href="{% url 'about' %}">Acerca de</a></li>
+                <li><a href="{% url 'faqs' %}">FAQs</a></li>
+                <li><a href="{% url 'carrit' %}" class="selected">Carrito</a></li>
+            </ul>
+            <br style="clear: left" />
         </div> 
-    </div> 
+        <div style="text-align: right;margin-right: -250px;color:white;font-size: 20px;padding-top: 10px;">
+
+            {% if user.is_authenticated %}
+
+            Usuario: {{user.username}}
+            
+
+            {% else %}
+
+            No autenticado. Por favor registrese.
+
+            {% endif %}
+
+        </div>
+        <div id="templatemo_search">
+            <form action="#" method="get">
+              <input type="text" value=" " name="keyword" id="keyword" title="keyword" onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
+              <input type="submit" name="Search" value=" " alt="Search" id="searchbutton" title="Search" class="sub_btn"  />
+            </form>
+        </div>
+    </div>   
     <div id="templatemo_main">
     	<div id="sidebar" class="float_l">
         	<div class="sidebar_box"><span class="bottom"></span>
-            	<h3>Categories</h3>   
+            	<h3>Categorias</h3>   
                 <div class="content"> 
+                    {% for sneaker in sneakers %}
                 	<ul class="sidebar_list">
-                    	<li class="first"><a href="#">NIKE AIR JORDAN</a></li>
-                        <li><a href="{% url 'productDetail' %}">CONVERSE ALL STARS</a></li>
-                        <li><a href="{% url 'productDetail' %}">NIKE AIR FORCE 1</a></li>
-                        <li><a href="{% url 'productDetail' %}">AIR JORDAN XI</a></li>
-                        <li><a href="{% url 'productDetail' %}">REEBOK PUMP</a></li>
-                        <li><a href="{% url 'productDetail' %}">AIR JORDAN XII</a></li>
-                        <li><a href="{% url 'productDetail' %}">REEBOK QUESTION</a></li>
-                        <li><a href="{% url 'productDetail' %}">AIR PENNY 2.20</a></li>
-                        <li><a href="{% url 'productDetail' %}">NIKE AIR FORCE 2</a></li>
-                        <li><a href="{% url 'productDetail' %}">AIR JORDAN XIV</a></li>
-                        <li><a href="{% url 'productDetail' %}">REEBOK PUMP II</a></li>
-                        <li><a href="{% url 'productDetail' %}">AIR JORDAN XV</a></li>
-                        <li><a href="{% url 'productDetail' %}">REEBOK QUESTION TWO</a></li>
-                        <li class="last"><a href="{% url 'productDetail' %}">AIR PENNY 4.20</a></li>
+                        
+                    	<li class="first"><a href="{{ sneaker.get_absolute_url }}">{{sneaker.nombre}}</a></li>
                     </ul>
+                    {% endfor %}
                 </div>
-            </div>       
+            </div>
+            <div class="sidebar_box"><span class="bottom"></span>
+            	<h3>Proximamente...</h3>   
+                <div class="content"> 
+                	<div class="bs_box">
+                    	<a href="{% url 'products' %}"><img src="{% static '/images/product/08.jpg' %}" alt="image" /></a>
+                        <h4><a href="{% url 'products' %}">REEBOK QUESTION</a></h4>
+                        <p class="price">$120</p>
+                        <div class="cleaner"></div>
+                    </div>
+                    <div class="bs_box">
+                    	<a href="{% url 'products' %}"><img src="{% static '/images/product/04.jpg' %}" alt="image" /></a>
+                        <h4><a href="{% url 'products' %}">NEW BALANCE ONE</a></h4>
+                        <p class="price">$130</p>
+                        <div class="cleaner"></div>
+                    </div>
+                    <div class="bs_box">
+                    	<a href="{% url 'products' %}"><img src="{% static '/images/product/02.jpg' %}" alt="image" /></a>
+                        <h4><a href="{% url 'products' %}">CONVERSE ALL STARS</a></h4>
+                        <p class="price">$88</p>
+                        <div class="cleaner"></div>
+                    </div>
+                    <div class="bs_box">
+                    	<a href="{% url 'products' %}"><img src="{% static '/images/product/01.jpg' %}" alt="image" /></a>
+                        <h4><a href="{% url 'products' %}">OFF-WHITE VULCZ</a></h4>
+                        <p class="price">$380</p>
+                        <div class="cleaner"></div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div id="content" class="float_r">
         	<h1>Shopping Cart</h1>

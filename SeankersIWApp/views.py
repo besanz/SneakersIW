@@ -18,13 +18,16 @@ def products(request):
     return render(request, 'products.html', {'sneakers': sneakers})
 
 def about(request):
-    return render(request, 'about.html')
+    sneakers = Sneaker.objects.all()
+    return render(request, 'about.html', {'sneakers': sneakers})
 
 def faqs(request):
-    return render(request, 'faqs.html')
+    sneakers = Sneaker.objects.all()
+    return render(request, 'faqs.html', {'sneakers': sneakers})
 
 def carrit(request):
-    return render(request, 'shoppingcart.html')
+    sneakers = Sneaker.objects.all()
+    return render(request, 'shoppingcart.html', {'sneakers': sneakers})
 
 def detalle(request, id):
     sneakers = Sneaker.objects.all()
